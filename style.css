@@ -25,6 +25,7 @@
 
   /* Typography */
   --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-family);
   --font-mono: 'SFMono-Regular', Consolas, 'JetBrains Mono', monospace;
   --base-font-size: 16px;
 
@@ -251,6 +252,49 @@ body {
 .icon-btn:focus-visible {
   outline: 2px solid var(--brand-400);
   outline-offset: 2px;
+}
+
+/* Brand tools launcher toggle — styled to match .icon-btn */
+.toolbar .bl-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-btn);
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.toolbar .bl-toggle:hover,
+.toolbar .bl-toggle[aria-expanded="true"] {
+  background: var(--glass-bg-hover);
+  border-color: var(--brand-400);
+  color: var(--brand-400);
+  transform: translateY(-2px);
+}
+
+.toolbar .bl-toggle:active {
+  transform: translateY(0);
+}
+
+.toolbar .bl-toggle:focus-visible {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 2px;
+}
+
+.toolbar .bl-toggle svg {
+  width: 1em;
+  height: 1em;
 }
 
 /* Popover Panel */
